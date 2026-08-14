@@ -32,49 +32,34 @@ By completing this project, I was able to:
 
 ## 3. MVC Architecture
 
-**What is MVC?**
+### What is MVC?
 
-MVC stands for Model-View-Controller. It's a way of organizing an application into three separate responsibilities:
+MVC stands for **Model-View-Controller**. It is a way of organizing an application into different parts, where each part has its own job.
 
-- **Model** – manages data and business logic (not used directly in this project since no database was required)
-- **View** – handles what the user actually sees (in Laravel, this is the Blade templates)
-- **Controller** – sits in between; it receives the request from the browser and decides which view to return
+* **Model** – handles data and database-related operations. It was not directly used in this project because the website does not use a database.
+* **View** – handles the design and content that users see. In Laravel, this is done using **Blade files**.
+* **Controller** – handles requests and connects the routes to the correct views.
 
-**Why Laravel uses MVC**
+### Why Laravel uses MVC
 
-Laravel uses MVC so that each part of the application has one clear job. Routes decide *where* a request goes, controllers decide *what* should happen, and views decide *how* it looks. This keeps the codebase organized instead of mixing HTML, PHP logic, and routing all in one file.
+Laravel uses MVC to keep the code organized and easier to manage. Instead of putting everything in one file, the routes, controllers, and views have their own responsibilities. This makes the project easier to understand, update, and debug.
 
-**Advantages of MVC in software development**
+### Advantages of MVC in Software Development
 
-- Easier to maintain — a change to the design doesn't require touching the logic, and vice versa
-- Easier to debug — if a page shows wrong content, the problem is isolated to either the route, controller, or view
-- Reusable components — the same layout, navbar, and footer are reused across every page without duplication
-- Scalable — as a project grows, new features can be added without disturbing existing code
+* Keeps the code organized
+* Makes debugging easier
+* Allows parts of the code to be reused
+* Makes the project easier to maintain
+* Helps the application grow without making the code too messy
 
-**Request Flow Diagram**
+### MVC Request Flow
 
-```
-Browser
-   │
-   ▼
-Route (web.php)
-   │
-   ▼
-CompanyController
-   │
-   ▼
-Blade View
-   │
-   ▼
-HTML Response
-   │
-   ▼
-Browser
-```
+The diagram below shows how a request moves through the Laravel application. When a user visits a page, the browser sends a request to Laravel. The route in `web.php` identifies which controller method should handle the request. The controller then returns the correct Blade view, which is converted into HTML and sent back to the browser.
 
-When a user visits a page, the browser sends a request to Laravel. Laravel checks `routes/web.php` to see which route matches the URL, then calls the matching method inside `CompanyController`. That method returns a Blade view, which Laravel compiles into HTML and sends back to the browser as the final response.
+![Laravel MVC Request Flow](documentations/mvc-architecture.png)
 
----
+This project follows the same flow for the four main pages: **Home, About, Services, and Contact**. Each page has its own route and controller method, while the Blade views are used to display the content.
+
 
 ## 4. Laravel Routing
 
