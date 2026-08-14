@@ -281,14 +281,16 @@ File extensions were enabled in File Explorer's View settings, and the `dir` com
 
 ## 11. Reflection
 
-This project helped me understand how MVC works in a real Laravel application. Before this activity, I only knew MVC as a concept, but building the website helped me see how routes, controllers, and Blade views work together. The route receives the request, the controller handles it, and the Blade view displays the page.
+Working on this project helped me understand MVC better because I was able to use it in an actual Laravel project instead of just reading about it. Before this activity, I only knew MVC as a way of organizing code. While building the website, I learned how the different parts work together. When I visited a page, the request first went through the route in `web.php`, then to the `CompanyController`, and finally to the Blade view that displays the page.
 
-I also learned why separation of concerns is important. Keeping the routes, controller, and views separate made my project easier to organize and debug. When I had a "view not found" error, I knew to check my Blade files instead of changing the whole project.
+One thing I learned from this project is the importance of separation of concerns. At first, I thought putting everything in one file would be easier, especially for a small website. However, when I started working with four pages, a navigation bar, and a footer, I realized that keeping the code separated made the project easier to manage. The routes were placed in `web.php`, the page handling was placed in the controller, and the design and content were placed in the Blade files. Because of this, I knew where to look when something was not working. For example, when I experienced a "view not found" error, I checked the Blade files and their filenames instead of changing the routes or controller.
 
-Another thing I learned is that MVC can be useful for larger systems because it keeps the code organized as more pages and features are added. This makes it easier for developers to maintain and update the system.
+I also learned how routes, controllers, and views work together. I think of the route as the starting point because it tells Laravel which controller method should handle a request. The controller then returns the correct view, and the Blade view is responsible for showing the content to the user. In this project, the process was simple because each controller method only returned a view. Even though it was simple, it helped me understand how Laravel handles requests.
 
-Lastly, I learned to be more patient when debugging. I encountered errors such as the tempnam() issue and incorrect Blade file names, but solving them step by step helped me understand Laravel better. Overall, this project gave me a better understanding of MVC and improved my confidence in working with Laravel.
----
+This project also made me understand why MVC can be useful for bigger systems. A company website or an application can become very large when more features and pages are added. If everything is placed in one file, it can become difficult to find and change something. With MVC, the code is organized into different parts, making it easier for developers to work on the project and maintain it as it grows.
+
+Lastly, I learned that debugging is an important part of development. I encountered several errors while working on the project, including the `tempnam()` error and problems with Blade file names. At first, these errors were confusing, but checking the error messages and fixing them step by step helped me understand what was wrong. Overall, this activity gave me a better understanding of Laravel MVC and also helped me become more patient and careful when solving programming problems.
+
 
 ## 12. References
 
